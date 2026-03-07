@@ -7,7 +7,12 @@ local function clamp(value, min, max)
     return math.min(math.max(value, min), max)
 end
 
+local function map(n, InMin, InMax, OutMin, OutMax)
+    return (OutMin + ((OutMax - OutMin) * ((n - InMin) / (InMax - InMin))))
+end
+
 return {
     clamp = clamp,
-    round = round
+    round = round,
+    map = map
 }
